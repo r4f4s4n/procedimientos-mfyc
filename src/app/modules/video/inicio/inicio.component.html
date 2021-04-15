@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="header">
+      <!--BANNER AREA-->
+      <div class="header__banner"
+           [ngStyle]="{
+        'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'
+        }">
+        <!--<h2>{{trending[0].titulo}}</h2>-->
+        <h2>¡Resistiré!</h2>
+        <div class="header__buttons">
+  
+          <button class="play-button">
+            <mat-icon>arrow_right</mat-icon>
+            <span>Play</span>
+          </button>
+  
+          <button class="more-button">
+            <mat-icon>info</mat-icon>
+            <span>Más información</span>
+          </button>
+  
+        </div>
+  
+  
+      </div>  <!--BANNER ENDS HERE-->
+  
+  
+      <!--MAIN AREA-->
+     <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+       <div class="header__left">
+         <a routerLink="/">
+           <img src="assets/pmfyc.svg" alt="logo">
+         </a>
+         <ul>
+           <li class="active"><a href="#">Inicio</a></li>
+           <li><a href="#">Mi Lista</a></li>
+           <li><a href="#">Visto recientemente</a></li>
+         </ul>
+       </div>
+  
+       <div class="header__right">
+         <ul>
+           <li><a href="#"><mat-icon>search</mat-icon></a></li>
+           <li><a href="#"><mat-icon>notifications</mat-icon></a></li>
+           <li>
+             <img src="https://i.ibb.co/fMkPRkd/house.jpg" width="32"
+                  alt="avatar">
+           </li>
+           <li class="nav-item">
+            <button class="btn btn-link" style="color: #ffffff80;" (click)="logout()">Logout</button>
+          </li>
+         </ul>
+       </div>
+     </div>  <!--HEADER MAIN ENDS HERE-->
+  
+    </div>
+  
+    <div class="body" style="margin-top: 30rem;">
+      <app-slider title="Más vistos" [videos]="trending" [sliderConfig]="sliderConfig"></app-slider>
+      <app-slider title="Vendajes" [videos]="vendajes" [sliderConfig]="sliderConfig"></app-slider>
+      <app-slider title="Ecografías" [videos]="ecografias" [sliderConfig]="sliderConfig"></app-slider>
+    </div>
+  
+  
+  
+  </div>
+  
