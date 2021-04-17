@@ -1,18 +1,13 @@
+import { AutenticacionComponent } from './modules/autenticacion/autenticacion.component';
 import { LoginGuard } from './core/guards/login-guard';
-import { LoginComponent } from './modules/usuario/login/login.component';
-import { RegistroUsuarioComponent } from './modules/usuario/registro-usuario/registro-usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './modules/video/inicio/inicio.component';
 
 const routes: Routes = [
   {
-    path: 'registro',
-    component: RegistroUsuarioComponent
-  },
-  {
     path: 'login',
-    component: LoginComponent
+    component: AutenticacionComponent
   },
   {
     path: '',

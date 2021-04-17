@@ -1,0 +1,56 @@
+
+<div class="form-container sign-up-container">
+    <form [formGroup]="registroForm" autocomplete="off" novalidate (ngSubmit)="registroUsuario(registroForm.value)">
+        <h1>Registro</h1>
+        
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social"><i class="fab fa-google"></i></a>
+          <a href="#" class="social"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span>o regístrate con tu correo</span>
+        
+        <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email" />
+        <em *ngIf="validateControl('email') && hasError('email', 'email')">Proporcione un correo electrónico válido</em>
+        <em *ngIf="validateControl('email') && hasError('email', 'required')">Es necesario introducir el email</em>
+        
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password" />
+        <em *ngIf="validateControl('password') && hasError('password', 'required')">Es necesario introducir una contraseña</em>
+        
+        <input type="password" id="confirm" formControlName="confirm" class="form-control" placeholder="Confirmación password" />
+        <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Es necesario confirmar la contraseña.</em>
+        <em *ngIf="hasError('confirm', 'mustMatch')">La contraseña no coincide</em>
+
+        <br>
+        
+        <button type="submit" class="btn btn-info" [disabled]="!registroForm.valid">Registro</button>
+
+        <br>
+        
+        <div *ngIf="showError">
+            <em>{{errorMessage}}</em>
+        </div>
+        
+        <!-- <div class="form-group row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-1">          
+            </div>
+        </div> -->

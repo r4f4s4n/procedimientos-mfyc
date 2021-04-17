@@ -1,0 +1,53 @@
+<div class="form-container sign-in-container">
+    <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="login(loginForm.value)">
+        <h1>Login</h1>
+
+        <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social"><i class="fab fa-google"></i></a>
+            <a href="#" class="social"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <span>o accede con tu correo</span>
+        
+        <input type="text" id="emailLogin" formControlName="email" class="form-control" placeholder="Email" />
+        <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
+        
+        <input type="password" id="passwordLogin" formControlName="password" class="form-control" placeholder="Password" />
+        <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+        
+        <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Entrar</button>
+
+        <div *ngIf="showError">
+            <br>
+            <em>{{errorMessage}}</em>
+        </div>
+        
+        <a (click)="olvidoPanel()">¿Olvidaste la contraseña?</a>
+        <div class="olvido-panel" [ngClass]="{'olvido-panel--active': esOlvidoPanel}">
+            <div class="olvido-panel__input">
+                <input type="text" id="emailOlvido" formControlName="emailOlvido" class="form-control" placeholder="Email" />
+                <em *ngIf="validateControl('email')">Email incorrecto</em>
+            </div>
+            <div class="olvido-panel__button">
+                <button type="button" class="btn btn-info">Enviar</button>
+            </div>
+        </div>
+        
+    </form>
+    
+  </div>
+
+  <div class="loading-container" [ngClass]="{'loading-container--active': esCargando}">
+    <div class="loading">
+
+      <svg version="1.2" height="300" width="600" xmlns="http://www.w3.org/2000/svg"
+        viewport="0 0 60 60" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+        <path id="pulsar" stroke="gray" fill="none" stroke-width="1"stroke-linejoin="round" d="M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210" /> 
+         
+      </svg>
+      
+    </div>
+  </div>
+
+  

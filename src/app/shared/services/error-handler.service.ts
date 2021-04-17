@@ -39,7 +39,7 @@ export class ErrorHandlerService implements HttpInterceptor {
   }
   
   private handleBadRequest = (error: HttpErrorResponse): string => {
-    if(this._router.url === '/registro'){
+    if(this._router.url === '/login'){
       let message = '';
       const values = Object.values(error.error.errores);
       values.map((m: string) => {

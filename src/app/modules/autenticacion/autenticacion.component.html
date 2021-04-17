@@ -1,0 +1,22 @@
+<div class="container" [ngClass]="{'right-panel-active': esDesplazarPanel}">
+    <app-login></app-login>
+    <app-registro-usuario></app-registro-usuario>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>¡Bienvenido!</h1>
+          <br>
+          <!-- <p>Please login with your personal info</p> -->
+          <button class="ghost" (click)="desplazarPanel()"
+          [ngClass]="{'right-panel-active': esDesplazarPanel}">¿Ya tienes usuario?</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>¡Hola!</h1>
+          <br>
+          <!-- <p>Enter your personal details and start your journey with us</p> -->
+          <button class="ghost" (click)="desplazarPanel()">Regístrate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,6 +1,6 @@
 import { ConfirmacionPasswordService } from '../../../shared/validators/confirmacion-password.service';
-import { UsuarioService } from './../../../core/services/usuario.service';
-import { Usuario } from './../../../core/models/usuario';
+import { UsuarioService } from '../../../core/services/usuario.service';
+import { Usuario } from '../../../core/models/usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 

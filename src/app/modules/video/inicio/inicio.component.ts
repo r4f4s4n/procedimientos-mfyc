@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Video } from 'src/app/core/models/video';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
@@ -16,9 +16,11 @@ export class InicioComponent implements OnInit, OnDestroy {
   vendajes: Video[];
   ecografias: Video[];
 
+  esPaginaActiva: boolean = false;
+
   sliderConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 2,
     arrows: true,
     autoplay: false
   };
@@ -45,6 +47,7 @@ export class InicioComponent implements OnInit, OnDestroy {
       this.ecografias = data;
     })
 
+    this.esPaginaActiva = true;
   }
 
   public logout = () => {

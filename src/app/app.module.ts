@@ -1,5 +1,5 @@
 import { InicioComponent } from './modules/video/inicio/inicio.component';
-import { RegistroUsuarioComponent } from './modules/usuario/registro-usuario/registro-usuario.component';
+import { RegistroUsuarioComponent } from './modules/autenticacion/registro-usuario/registro-usuario.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,8 +11,9 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './modules/usuario/login/login.component';
 import { ErrorHandlerService } from './shared/services/error-handler.service';
+import { LoginComponent } from './modules/autenticacion/login/login.component';
+import { AutenticacionComponent } from './modules/autenticacion/autenticacion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorHandlerService } from './shared/services/error-handler.service';
     SliderComponent,
     RegistroUsuarioComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    AutenticacionComponent
   ],
   imports: [
     BrowserModule,
