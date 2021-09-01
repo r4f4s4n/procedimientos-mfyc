@@ -4,8 +4,13 @@
   <div class="movie__images">
     <div class="thumbnails">
       <ngx-slick-carousel [config]="sliderConfig" class="carousel">
-        <div class="slick-item" *ngFor="let m of videos" ngxSlickItem>
-          <img src="{{m?.urlImagen}}" alt="{{m.titulo}}" data-toggle="tooltip" title="{{m.titulo}}">
+        <div class="slick-item" *ngFor="let m of videos; let i = index" ngxSlickItem>
+          
+          <img class="movie-image" src="{{m?.urlImagen}}" alt="{{m.titulo}}" title=""
+          [ngClass]="movieClass[i]" (mouseover)="gifClass[i]='gif-inn'">
+          <img class="movie-gif" src="{{m?.urlGif}}" alt="{{m.titulo}}" title=""
+          [ngClass]="gifClass[i]" (mouseout)="gifClass[i]='movie-gif';onMouseOut(m)">
+          <div class="title-container"><span>{{m.titulo}}</span></div>
         </div>
       </ngx-slick-carousel>
     </div>

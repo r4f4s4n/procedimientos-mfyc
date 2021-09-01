@@ -25,12 +25,10 @@ export class UsuarioService {
   }
 
   registro(usuario : Usuario): Observable<UsuarioResponse> {
-    console.log(usuario);
     return this.http.post<UsuarioResponse>(`${this.URL}${endpoint.registro}`, usuario);
   }
 
   login(usuario : Usuario): Observable<UsuarioResponse> {
-    console.log(usuario);
     return this.http.post<UsuarioResponse>(`${this.URL}${endpoint.login}`, usuario);
   }
 

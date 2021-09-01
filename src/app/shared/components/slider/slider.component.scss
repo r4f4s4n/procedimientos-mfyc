@@ -18,13 +18,42 @@ img {
         color: #ffc800;
       }
 
+      .slick-gif {
+        width: 350px;
+      }
+
       .slick-item {
-        transition: all 0.3s ease;
-        img {
+        transition: all 0.8s ease;
+        .movie-image {
           background: #1d1d1d;
           padding: 5px;
           max-width: 300px;
+          z-index: 10;
         }
+        .movie-gif {
+          padding: 4px;
+          top: 1px;
+          position: absolute;
+          width: 300px;
+          z-index: -1;
+        }
+        .gif-inn {
+          z-index: 11;
+        }
+        .title-container {
+          position: relative;
+          z-index: 20;
+          span {
+            margin-left: .4em;
+            position: absolute;
+            top: -25px;
+            background: white;
+            padding: 0 .5em;
+            border-radius: 5%;
+            border: .5px solid gray;
+          }
+        }
+        
       }
 
       .slick-item:hover {

@@ -37,32 +37,30 @@
            <li><a href="#">Visto recientemente</a></li>
          </ul>
        </div>
-  
-       <div class="header__right">
-         <ul>
-           <li><a href="#">
-             <!-- <mat-icon>search</mat-icon> -->
-            </a></li>
-           <li><a href="#">
-             <!-- <mat-icon>notifications</mat-icon> -->
-            </a></li>
-           <li>
-             <img src="https://i.ibb.co/fMkPRkd/house.jpg" width="32"
-                  alt="avatar">
-           </li>
-           <li class="nav-item">
-            <button class="btn btn-link" style="color: #ffffff80;" (click)="logout()">Logout</button>
-          </li>
-         </ul>
-       </div>
-     </div>  <!--HEADER MAIN ENDS HERE-->
+
+       <div id="circularMenu" class="circular-menu" #circularMenu>
+
+        <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+          <i class="icon icon-accessibility"></i>
+        </a>
+      
+        <menu class="items-wrapper">
+          <a class="menu-item" href="#"><img src='assets/icon/bataicon.png' title="Perfil" class="bataicon"/></a>
+          <a class="menu-item" href="#"><img src='assets/icon/carpeticon.png' title="Mensajes"  class="carpeticon"/></a>
+          <a class="menu-item" href="#"(click)="logout()"><img src='assets/icon/coraicon.png' title="Salir"  class="coraicon"/></a>
+        </menu>
+      
+      </div>
+     </div>  
   
     </div>
+
+    <!--HEADER MAIN ENDS HERE-->
   
     <div class="body" style="margin-top: 30rem;">
       <app-slider title="Más vistos" [videos]="trending" [sliderConfig]="sliderConfig"></app-slider>
       <app-slider title="Vendajes" [videos]="vendajes" [sliderConfig]="sliderConfig"></app-slider>
-      <app-slider title="Ecografías" [videos]="ecografias" [sliderConfig]="sliderConfig"></app-slider>
+      <app-slider title="Material" [videos]="material" [sliderConfig]="sliderConfig"></app-slider>
     </div>
   
   
